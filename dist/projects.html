@@ -1,13 +1,244 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./style.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline bg-yellow-600">
-    Hello world!
-  </h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-black text-white">
+    <header class="h-32 sticky top-0 border border-gray-800 z-40 bg-black">
+      <div class="mt-12 flex justify-around items-baseline">
+        <div class="ml-2 inline-flex items-baseline gap-1.5">
+          <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
+          <span class="text-2xl font-bold">
+            <span>Boris</span>
+            <span class="text-green-400">Portfolio</span>
+          </span>
+        </div>
+        <div class="flex justify-center">
+          <nav class="flex gap-12 text-white">
+            <a href="home.html" class="relative group">
+              Home
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+
+            <a href="skills.html" class="relative group">
+              Skills
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a href="projects.html" class="relative group">
+              Projects
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a href="contact.html" class="relative group">
+              Contact
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </nav>
+        </div>
+        <div class="mr-2">
+          <button
+            class="bg-green-500 hover:bg-green-600 text-black font-bold text-xl rounded-3xl px-4 py-2 justify-endt"
+          >
+            <a href="contact.html">Get in Touch</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mb-14 mx-46">
+      <h3 class="text-green-500 font-bold mt-20">Projects</h3>
+      <div class="flex justify-between my-7">
+        <p class="text-2xl font-bold">
+          <span>Featured </span><span class="text-green-500">Projects.</span>
+        </p>
+        <button
+          class="text-green-500 border border-green-800 text-center px-1 py-1 rounded-3xl hover:bg-green-800"
+        >
+          <a href="allProjects.html">View All Projects --&gt;</a>
+        </button>
+      </div>
+      <p class="text-gray-500 text-sm">Some of my recent work</p>
+    </div>
+    <div class="grid grid-cols-3 mx-36 mb-28">
+      <div class="border border-gray-600 mb-7 ml-10 w-96 rounded-2xl">
+        <img class="w-full h-72 py-3" src="../assets/jeuVie.png" alt="" />
+        <div class="px-10">
+          <h3 class="py-2.5">Game of life of J. H. Conway</h3>
+          <p class="text-sm text-gray-500">
+            The Game of Life is a cellular automaton that runs without player
+            interaction. It takes place on a grid of living and dead cells,
+            whose evolution depends on their neighbors. At each iteration, cells
+            are born, survive, or die according to simple rules.
+          </p>
+          <div class="flex justify-start py-3.5 gap-7">
+            <p class="text-green-500 font-bold">Java</p>
+            <p class="font-bold">JavaFX</p>
+          </div>
+          <div class="flex justify-between py-4">
+            <button class="text-green-500 hover:text-white">Live Demo</button>
+            <button class="text-green-500 hover:text-white">
+              <a href=""
+                >GitHub<span
+                  id="versGit"
+                  class="fa-brands fa-github pl-2"
+                ></span
+              ></a>
+            </button>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #ced9d4;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+      <div class="border border-gray-600 mb-7 ml-10 w-96 rounded-2xl">
+        <img class="w-full h-72 py-3" src="../assets/nextep.png" alt="" />
+        <div class="px-10">
+          <h3 class="py-2.5">Career Guidance Website</h3>
+          <p class="text-sm text-gray-500">
+            A web platform that helps users discover careers suited to their
+            skills through an interactive assessment.
+          </p>
+          <div class="flex justify-start py-3.5 gap-7">
+            <p class="text-green-500 font-bold">PHP</p>
+            <p class="font-bold">HTML</p>
+            <p>CSS/Boostrap</p>
+            <p>JavaScript</p>
+          </div>
+          <div class="flex justify-between py-4">
+            <button class="text-green-500 hover:text-white">Live Demo</button>
+            <button class="text-green-500 hover:text-white">
+              <a href=""
+                >GitHub<span
+                  id="versGit"
+                  class="fa-brands fa-github pl-2"
+                ></span
+              ></a>
+            </button>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #ced9d4;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+      <div class="border border-gray-600 mb-7 ml-10 w-96 rounded-2xl">
+        <img class="w-full h-72 py-3" src="../assets/lsystem.png" alt="" />
+        <div class="px-10">
+          <h3 class="py-2.5">L-System Interpreter</h3>
+          <p class="text-sm text-gray-500">
+            L-system interpreter for generating 2D and 3D plant structures based
+            on rewriting rules, illustrating natural growth patterns.
+          </p>
+          <div class="flex justify-start py-3.5 gap-7">
+            <p class="text-green-500 font-bold">Java</p>
+            <p class="font-bold">JavaFX</p>
+          </div>
+          <div class="flex justify-between py-4">
+            <button class="text-green-500 hover:text-white">Live Demo</button>
+            <button class="text-green-500 hover:text-white">
+              <a href=""
+                >GitHub<span
+                  id="versGit"
+                  class="fa-brands fa-github pl-2"
+                ></span
+              ></a>
+            </button>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #ced9d4;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+      <div class="border border-gray-600 mb-7 ml-10 w-96 rounded-2xl">
+        <img class="w-full h-72 py-3" src="../assets/DM.png" alt="" />
+        <div class="px-10">
+          <h3 class="py-2.5">Personal Task Manager</h3>
+          <p class="text-sm text-gray-500">
+            A task management application designed to organize my personal
+            schedule, featuring full CRUD operations for creating, updating, and
+            tracking tasks.
+          </p>
+          <div class="flex justify-start py-3.5 gap-7">
+            <p class="text-green-500 font-bold">PHP</p>
+            <p class="font-bold">HTML</p>
+            <p>CSS</p>
+          </div>
+          <div class="flex justify-between py-4">
+            <button class="text-green-500 hover:text-white">Live Demo</button>
+            <button class="text-green-500 hover:text-white">
+              <a href=""
+                >GitHub<span
+                  id="versGit"
+                  class="fa-brands fa-github pl-2"
+                ></span
+              ></a>
+            </button>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #ced9d4;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-12 h-0.5 w-full bg-green-500"></div>
+    <div id="apres line" class="flex justify-between ml-40 mr-40 mb-12">
+      <div
+        id="1"
+        class="w-xs rounded-2xl overflow-hidden bg-black grid grid-cols-1 gap-2.5"
+      >
+        <div class="ml-2 inline-flex items-baseline gap-1.5">
+          <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
+          <span class="text-2xl font-bold">
+            <span>Boris</span>
+            <span class="text-green-400">Portfolio</span>
+          </span>
+        </div>
+      </div>
+
+      <p class="text-gray-400 mt-1.5">
+        @2026 Amoussou Mensanh Boris. All rights reserved
+      </p>
+
+      <div>
+        <a href=""
+          ><span id="reseaux" class="fa-brands fa-github pr-3.5"></span
+        ></a>
+        <a href=""> <span id="reseaux" class="fa-brands fa-linkedin"></span></a>
+        <style>
+          #reseaux {
+            font-size: 30px;
+            color: #ced9d4;
+            transition: 0.3s;
+          }
+
+          #reseaux:hover {
+            transform: scale(1.2);
+          }
+        </style>
+      </div>
+    </div>
+  </body>
 </html>
