@@ -4,25 +4,238 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body class="bg-black">
-    <div class="inline-flex items-baseline gap-1.5">
-      <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
-      <span>
-        <span class="text-white font-bold">Boris</span>
-        <span class="text-green-400 font-bold">Portofolio</span>
-      </span>
+  <body class="bg-black text-white">
+    <header class="h-28 sticky top-0 border border-gray-800 z-40 bg-black">
+      <div class="mt-12 flex justify-around items-baseline">
+        <div class="ml-2 inline-flex items-baseline gap-1.5">
+          <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
+          <span class="text-2xl font-bold">
+            <span>Boris</span>
+            <span class="text-green-400">Portfolio</span>
+          </span>
+        </div>
+        <div class="flex justify-center">
+          <nav class="flex gap-12 text-white">
+            <a href="home.html" class="relative group">
+              Home
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+
+            <a href="skills.html" class="relative group">
+              Skills
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a href="projects.html" class="relative group">
+              Projects
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a href="contact.html" class="relative group">
+              Contact
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </nav>
+        </div>
+        <div class="mr-2">
+          <button
+            class="bg-green-500 hover:bg-green-600 text-black font-bold text-xl rounded-3xl px-4 py-2 justify-endt"
+          >
+            <a href="contact.html">Get in Touch</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div id="cont_principal" class="grid grid-cols-2 gap-10 mt-10 mx-16">
+      <div id="col_msg" class="ml-32 pt-20">
+        
+          <div>
+            <h4 class="text-green-500 mb-3">Contact</h4>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Get in <span class="text-green-400">Touch.</span>
+            </h1>
+            <p class="text-gray-400 mb-8">
+              I'm open to internships opportunities <br />
+              and interesting projects
+            </p>
+          </div>
+        
+        <div class="grid grid-cols-1 gap-14">
+          <div
+            class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72"
+          >
+            <div class="grid grid-cols-2">
+              <div class="border border-green-800 bg-green-900 mt-3 w-12">
+                <span
+                  id="versGit"
+                  class="fa-brands fa-rocketchat px-3 py-3"
+                ></span>
+              </div>
+              <div class="grid grid-cols-1 gap-1.5 -ml-12">
+                <span>Email</span>
+                <span
+                  ><a
+                    href="mailto:borisamouss02@gmail.com?subject=Contact Portfolio&body=Bonjour Monsieur AMOUSSOU Boris"
+                    class="text-gray-500 text-sm hover:text-white"
+                    >borisamouss02@gmail.com</a
+                  ></span
+                >
+              </div>
+            </div>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #07a744;
+              }
+            </style>
+          </div>
+          <div
+            class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72"
+          >
+            <div class="grid grid-cols-2">
+              <div class="border border-green-800 bg-green-900 mt-3 w-12">
+                <span id="versGit" class="fa-brands fa-github px-3 py-3"></span>
+              </div>
+              <div class="grid grid-cols-1 gap-1.5 -ml-12">
+                <span>Github</span>
+                <span
+                  ><a
+                    href="https://github.com/AmoussouMensanhBoris"
+                    class="text-gray-500 text-sm wrap-break-word hover:text-white"
+                    >https://github.com/AmoussouMensanhBoris</a
+                  ></span
+                >
+              </div>
+            </div>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #07a744;
+              }
+            </style>
+          </div>
+          <div
+            class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72"
+          >
+            <div class="grid grid-cols-2">
+              <div class="border border-green-800 bg-green-900 mt-3 w-12">
+                <span
+                  id="versGit"
+                  class="fa-brands fa-linkedin px-3 py-3"
+                ></span>
+              </div>
+              <div class="grid grid-cols-1 gap-1.5 -ml-12">
+                <span>Linkedin</span>
+                <span
+                  ><a
+                    href="https://www.linkedin.com/in/amoussou-mensanh-boris-966256271"
+                    class="text-gray-500 text-sm hover:text-white"
+                    >linkedin.com/in/amoussou-mensanh-boris-966256271</a
+                  ></span
+                >
+              </div>
+            </div>
+            <style>
+              #versGit {
+                font-size: 20px;
+                color: #07a744;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+      <div id="section2" class="relative mb-80">
+        <!-- Image -->
+        <div class="max-w-md">
+          <img src="../assets/profil.png" class="w-full object-cover" />
+        </div>
+
+        <!-- Form -->
+        <div
+          class="absolute bottom-0 translate-y-60 border border-green-900 w-96 h-72 px-10 py-10 bg-black rounded-2xl shadow-lg shadow-green-700"
+        >
+          <form action="">
+            <div class="grid grid-cols-2 gap-3.5">
+              <label for="nom">Name</label>
+              <label for="email">Email</label>
+
+              <input
+                type="text"
+                id="nom"
+                class="border border-green-900 rounded-xl"
+              />
+
+              <input
+                type="email"
+                id="email"
+                class="border border-green-900 rounded-xl"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 gap-2 mt-4">
+              <label for="message">Message</label>
+
+              <textarea id="message" class="border border-green-900">
+              </textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="bg-green-500 rounded-2xl mt-5 px-3 py-2"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div>
-        <nav>
-            <ul>
-                <li><a href=""></a></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </nav>
+    <div class="mb-12 h-0.5 w-full bg-green-500"></div>
+    <div id="apres line" class="flex justify-between ml-40 mr-40 mb-12">
+      <div
+        id="1"
+        class="w-xs rounded-2xl overflow-hidden bg-black grid grid-cols-1 gap-2.5"
+      >
+        <div class="ml-2 inline-flex items-baseline gap-1.5">
+          <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
+          <span class="text-2xl font-bold">
+            <span>Boris</span>
+            <span class="text-green-400">Portfolio</span>
+          </span>
+        </div>
+      </div>
+
+      <p class="text-gray-400 mt-1.5">
+        @2026 Amoussou Mensanh Boris. All rights reserved
+      </p>
+
+      <div>
+        <a href=""
+          ><span id="reseaux" class="fa-brands fa-github pr-3.5"></span
+        ></a>
+        <a href=""> <span id="reseaux" class="fa-brands fa-linkedin"></span></a>
+        <style>
+          #reseaux {
+            font-size: 30px;
+            color: #ced9d4;
+            transition: 0.3s;
+          }
+
+          #reseaux:hover {
+            transform: scale(1.2);
+          }
+        </style>
+      </div>
     </div>
   </body>
 </html>
