@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,28 +9,76 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
-  <body class="bg-black text-white overflow-x-hidden">
-    <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-black border-b border-gray-800"> <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" > <!-- LOGO --> <div class="inline-flex items-baseline gap-1.5"> <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span> <span class="text-2xl font-bold"> <span>Boris</span> <span class="text-green-400">Portfolio</span> </span> </div> <!-- NAV DESKTOP --> <nav class="hidden md:flex gap-10 text-white"> <a href="#home" class="hover:text-green-400 transition">Home</a> <a href="#skills" class="hover:text-green-400 transition">Skills</a> <a href="#projects" class="hover:text-green-400 transition"> Projects </a> <a href="#contact" class="hover:text-green-400 transition"> Contact </a> </nav> <!-- BOUTON --> <div class="hidden md:block"> <a href="#contact" class="bg-green-500 hover:bg-green-400 text-black font-bold rounded-3xl px-5 py-2 transition" > Get in Touch </a> </div> <!-- HAMBURGER --> <button id="menu-btn" class="md:hidden text-3xl text-green-400" ><i class="fa-solid fa-bars"></i></button> </div> <!-- MENU MOBILE --> <div id="mobile-menu" class="hidden md:hidden flex flex-col gap-6 px-6 py-6 bg-black border-t border-gray-800" > <a href="#home" class="hover:text-green-400">Home</a> <a href="#skills" class="hover:text-green-400">Skills</a> <a href="#projects" class="hover:text-green-400">Projects</a> <a href="#contact" class="hover:text-green-400">Contact</a> <a href="#contact" class="bg-green-500 text-black text-center rounded-3xl py-2 font-bold" > Get in Touch </a> </div> </header>
-<script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
-  const navLinks = document.querySelectorAll("#mobile-menu a");
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-    });
-  });
-</script>
+  <body class="bg-black text-white overflow-x-hidden scroll-smooth">
+    <!-- header -->
+    <header class="sticky top-0 z-50 bg-black border-b border-gray-800">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- logo -->
+        <div class="inline-flex items-baseline gap-1.5">
+          <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
+          <span class="text-2xl font-bold">
+            <span>Boris</span> <span class="text-green-400">Portfolio</span>
+          </span>
+        </div>
+        <!-- liens  -->
+        <nav class="hidden md:flex gap-10 text-white">
+          <a href="#home" class="hover:text-green-400 transition link"
+            >Home</a
+          >
+          <a href="#skills" class="hover:text-green-400 transition link"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="hover:text-green-400 transition link"
+           
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            class="hover:text-green-400 transition link"
+            
+          >
+            Contact
+          </a>
+        </nav>
+        <!-- bouton contacter -->
+        <div class="hidden md:block">
+          <a
+            href="#contact"
+            class="bg-green-500 hover:bg-green-400 text-black font-bold rounded-3xl px-5 py-2 transition"
+          >
+            Get in Touch
+          </a>
+        </div>
+        <!-- burger -->
+        <button id="menu-btn" class="md:hidden text-3xl text-green-400">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <!-- menu mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden flex-col gap-6 px-6 py-6 bg-black border-t border-gray-800"
+      >
+        <a href="#home" class="hover:text-green-400 link">Home</a>
+        <a href="#skills" class="hover:text-green-400 link">Skills</a>
+        <a href="#projects" class="hover:text-green-400 link">Projects</a>
+        <a href="#contact" class="hover:text-green-400 link">Contact</a>
+        <a
+          href="#contact"
+          class="bg-green-500 text-black text-center rounded-3xl py-2 font-bold"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </header>
     <!-- HOME -->
     <section id="home">
- <section class="min-h-screen flex items-center pt-24 pb-16">
+      <section class="min-h-screen flex items-center pt-24 pb-16">
         <div
           class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6"
         >
@@ -60,12 +108,9 @@
               Hi, I'm <span class="text-green-400">Boris.</span>
             </h1>
 
-            <p class="text-xl mb-4">I build modern web applications.</p>
+            <p id="mission" class="text-xl mb-4"></p>
 
-            <p class="text-gray-400 mb-8">
-              I'm a computer science student passionate about clean code,
-              distributed systems, and artificial intelligence.
-            </p>
+            <p id="statutPro" class="text-gray-400 mb-8"></p>
 
             <div class="flex gap-4">
               <a
@@ -87,184 +132,196 @@
           </div>
         </div>
       </section>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 px-6 md:px-16 mb-36">
-      <div
-        class="w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-      >
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="icon"
-          >
-            <path
-              d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z"
-            />
-            <path
-              d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z"
-            />
-            <path
-              d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z"
-            />
-          </svg>
-          <style>
-            .icon {
-              width: 40px;
-              height: 40px;
-              color: #00ff88;
-              filter: drop-shadow(0 0 8px #00ff88);
-            }
-          </style>
-        </div>
-        <br />
-        <div class="mt-4">
-          <h2 class="text-xl font-bold text-white">Student</h2>
-          <p class="text-gray-300 mt-2">
-            Computer Science <br />
-            University of Caen
-          </p>
-        </div>
-      </div>
-      <div
-        class="w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-      >
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="icon"
-          >
-            <path
-              fillRule="evenodd"
-              d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z"
-              clipRule="evenodd"
-            />
-            <path
-              d="m10.076 8.64-2.201-2.2V4.874a.75.75 0 0 0-.364-.643l-3.75-2.25a.75.75 0 0 0-.916.113l-.75.75a.75.75 0 0 0-.113.916l2.25 3.75a.75.75 0 0 0 .643.364h1.564l2.062 2.062 1.575-1.297Z"
-            />
-            <path
-              fillRule="evenodd"
-              d="m12.556 17.329 4.183 4.182a3.375 3.375 0 0 0 4.773-4.773l-3.306-3.305a6.803 6.803 0 0 1-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 0 0-.167.063l-3.086 3.748Zm3.414-1.36a.75.75 0 0 1 1.06 0l1.875 1.876a.75.75 0 1 1-1.06 1.06L15.97 17.03a.75.75 0 0 1 0-1.06Z"
-              clipRule="evenodd"
-            />
-          </svg>
 
-          <style>
-            .icon {
-              width: 40px;
-              height: 40px;
-              color: #00ff88;
-              filter: drop-shadow(0 0 8px #00ff88);
-            }
-          </style>
-        </div>
-        <br />
-        <div class="mt-4">
-          <h2 class="text-xl font-bold text-white">Focus</h2>
-          <p class="text-gray-300 mt-2">
-            Web, distributed systems, and artificial intelligence.
-          </p>
-        </div>
-      </div>
       <div
-        class="w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+        class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 px-6 md:px-24 mb-36"
       >
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="icon"
-          >
-            <path
-              fillRule="evenodd"
-              d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
-              clipRule="evenodd"
-            />
-          </svg>
-
-          <style>
-            .icon {
-              width: 40px;
-              height: 40px;
-              color: #00ff88;
-              filter: drop-shadow(0 0 8px #00ff88);
-            }
-          </style>
+        <div
+          class="w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 shadow-green-500/40"
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+            >
+              <path
+                d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z"
+              />
+              <path
+                d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z"
+              />
+              <path
+                d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z"
+              />
+            </svg>
+            <style>
+              .icon {
+                width: 40px;
+                height: 40px;
+                color: #00ff88;
+                filter: drop-shadow(0 0 8px #00ff88);
+              }
+            </style>
+          </div>
+          <br />
+          <div class="mt-4">
+            <h2 class="text-xl font-bold text-white">Student</h2>
+            <p class="text-gray-300 mt-2">
+              Computer Science <br />
+              University of Caen
+            </p>
+          </div>
         </div>
-        <br />
-        <div class="mt-4">
-          <h2 class="text-xl font-bold text-white">Tech</h2>
-          <p class="text-gray-300 mt-2">
-            Java/Javafx- Php - Sql -<br />
-            Javascript - Tailwind css - Git
-          </p>
+        <div
+          class="shadow-green-500/40 w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z"
+                clipRule="evenodd"
+              />
+              <path
+                d="m10.076 8.64-2.201-2.2V4.874a.75.75 0 0 0-.364-.643l-3.75-2.25a.75.75 0 0 0-.916.113l-.75.75a.75.75 0 0 0-.113.916l2.25 3.75a.75.75 0 0 0 .643.364h1.564l2.062 2.062 1.575-1.297Z"
+              />
+              <path
+                fillRule="evenodd"
+                d="m12.556 17.329 4.183 4.182a3.375 3.375 0 0 0 4.773-4.773l-3.306-3.305a6.803 6.803 0 0 1-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 0 0-.167.063l-3.086 3.748Zm3.414-1.36a.75.75 0 0 1 1.06 0l1.875 1.876a.75.75 0 1 1-1.06 1.06L15.97 17.03a.75.75 0 0 1 0-1.06Z"
+                clipRule="evenodd"
+              />
+            </svg>
+
+            <style>
+              .icon {
+                width: 40px;
+                height: 40px;
+                color: #00ff88;
+                filter: drop-shadow(0 0 8px #00ff88);
+              }
+            </style>
+          </div>
+          <br />
+          <div class="mt-4">
+            <h2 class="text-xl font-bold text-white">Focus</h2>
+            <p class="text-gray-300 mt-2">
+              Web, distributed systems, and artificial intelligence.
+            </p>
+          </div>
+        </div>
+        <div
+          class="shadow-green-500/40 w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+            >
+              <path
+                fillRule="evenodd"
+                d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                clipRule="evenodd"
+              />
+            </svg>
+
+            <style>
+              .icon {
+                width: 40px;
+                height: 40px;
+                color: #00ff88;
+                filter: drop-shadow(0 0 8px #00ff88);
+              }
+            </style>
+          </div>
+          <br />
+          <div class="mt-4">
+            <h2 class="text-xl font-bold text-white">Tech</h2>
+            <p class="text-gray-300 mt-2">
+              Java/Javafx- Php - Sql -<br />
+              Javascript - Tailwind css - Git
+            </p>
+          </div>
+        </div>
+        <div
+          class="shadow-green-500/40 w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"
+                clipRule="evenodd"
+              />
+              <path
+                d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z"
+              />
+            </svg>
+
+            <style>
+              .icon {
+                width: 40px;
+                height: 40px;
+                color: #00ff88;
+                filter: drop-shadow(0 0 8px #00ff88);
+              }
+            </style>
+          </div>
+          <br />
+          <div class="mt-4">
+            <h2 class="text-xl font-bold text-white">Looking for</h2>
+            <p class="text-gray-300 mt-2">
+              Open to internships and <br />
+              collaborations
+            </p>
+          </div>
         </div>
       </div>
-      <div
-        class="w-full rounded-2xl overflow-hidden shadow-lg bg-black p-5 border border-gray-500 grid grid-cols-1 gap-0.5 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-      >
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="icon"
-          >
-            <path
-              fillRule="evenodd"
-              d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"
-              clipRule="evenodd"
-            />
-            <path
-              d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z"
-            />
-          </svg>
-
-          <style>
-            .icon {
-              width: 40px;
-              height: 40px;
-              color: #00ff88;
-              filter: drop-shadow(0 0 8px #00ff88);
-            }
-          </style>
-        </div>
-        <br />
-        <div class="mt-4">
-          <h2 class="text-xl font-bold text-white">Looking for</h2>
-          <p class="text-gray-300 mt-2">
-            Open to internships and <br />
-            collaborations
-          </p>
-        </div>
-      </div>
-    </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="px-6 md:px-16 mt-24">
-        <section id="section 1" class="ml-7">
-        <p class="text-green-500">SKILLS</p>
+      <div id="section 1" class="ml-7">
+        <p
+          style="font-family: &quot;Syne&quot;, sans-serif"
+          class="font-extrabold text-green-500 uppercase tracking-widest"
+        >
+          SKILLS
+        </p>
         <p>
           <span class="text-3xl font-bold">Technical </span
-          ><span class="text-green-500 text-2xl font-bold">Skills.</span>
+          ><span
+            class="text-green-500 text-2xl font-bold uppercase tracking-widest"
+            >Skills.</span
+          >
         </p>
         <p class="text-gray-500">Technologies i work with regulary</p>
         <br />
-      </section>
-      <section id="section langage">
+      </div>
+      <div id="section langage">
         <p class="ml-7">Programming Languages</p>
         <br />
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-4 md:px-20 gap-6 justify-items-center">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-4 md:px-20 gap-6 justify-items-center"
+        >
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
-              class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover "
+              class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
             >
               <p>
                 <img
@@ -279,7 +336,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -297,7 +354,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -315,7 +372,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -333,7 +390,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -352,9 +409,11 @@
         </div>
         <p class="ml-7 mt-7">Tools & Technologies</p>
         <br />
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-4 md:px-20 gap-6 justify-items-center">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-4 md:px-20 gap-6 justify-items-center"
+        >
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -372,7 +431,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -386,11 +445,11 @@
               </p>
             </div>
             <p class="text-sm italic" translate="no">Tailwind CSS</p>
-            <p class="text-gray-500 text-sm" translate="no" >CSS framework</p>
+            <p class="text-gray-500 text-sm" translate="no">CSS framework</p>
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -408,7 +467,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -426,7 +485,7 @@
           </div>
 
           <div
-            class="border border-gray-700 bg-gray-900 rounded-2xl  w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="hover:border-green-500 border border-gray-700 bg-gray-900 rounded-2xl w-full max-w-37.5 md:max-w-40 h-44 grid grid-cols-1 gap-0.5 justify-items-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
             <div
               class="border border-green-950 bg-green-950 w-20 h-20 rounded-full mt-5 object-cover"
@@ -443,8 +502,8 @@
             <p class="text-gray-500">Documents</p>
           </div>
         </div>
-      </section>
-      <section id="competences">
+      </div>
+      <div id="competences">
         <div>
           <p class="ml-7 mt-6">Competencies</p>
           <br />
@@ -465,7 +524,7 @@
               Learning & Adaptibility
             </div>
             <div
-              class="border border-green-800 text-center rounded-3xl  px-3 py-2 text-sm"
+              class="border border-green-800 text-center rounded-3xl px-3 py-2 text-sm"
             >
               Version Control
             </div>
@@ -480,328 +539,505 @@
               Problem Solving
             </div>
             <div
-              class="border border-green-800 text-center rounded-3xl  px-1.5 py-2 text-sm"
+              class="border border-green-800 text-center rounded-3xl px-1.5 py-2 text-sm"
             >
               Clean code
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects">
-         <div class="mb-14 px-6 md:px-16">
-      <h3 class="text-green-500 font-bold mt-20">Projects</h3>
-      <div class="flex justify-between my-7">
-        <p class="text-2xl font-bold">
-          <span>Featured </span><span class="text-green-500">Projects.</span>
-        </p>
-        <button
-          class="text-green-500 border border-green-800 text-center px-1 py-1 rounded-3xl hover:bg-green-800"
+      <div class="mb-14 px-6 md:px-16">
+        <h3
+          style="font-family: &quot;Syne&quot;, sans-serif"
+          class="font-extrabold text-green-500 uppercase tracking-widest mt-20"
         >
-          <a href="allProjects.html">View All Projects --&gt;</a>
-        </button>
-      </div>
-      <p class="text-gray-500 text-sm">Some of my recent work</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-6 md:px-16 mb-28">
-      <div class="border border-gray-600 mb-7  w-full rounded-2xl">
-        <img class="w-full h-72 py-3" src="../assets/jeuVie.png" alt="" />
-        <div class="px-10">
-          <h3 class="py-2.5">Game of life of J. H. Conway</h3>
-          <p class="text-sm text-gray-500">
-            The Game of Life is a cellular automaton that runs without player
-            interaction. It takes place on a grid of living and dead cells,
-            whose evolution depends on their neighbors. At each iteration, cells
-            are born, survive, or die according to simple rules.
+          Projects
+        </h3>
+        <div class="flex justify-between my-7">
+          <p class="text-2xl font-bold">
+            <span>Featured </span
+            ><span class="text-green-500 uppercase tracking-widest"
+              >Projects.</span
+            >
           </p>
-          <div class="flex justify-start py-3.5 gap-7">
-            <p class="text-green-500 font-bold">Java</p>
-            <p class="font-bold">JavaFX</p>
+          <button
+            class="text-green-500 border border-green-800 text-center px-1 py-1 rounded-3xl hover:bg-green-800"
+          >
+            <a href="allProjects.html">View All Projects --&gt;</a>
+          </button>
+        </div>
+        <p class="text-gray-500 text-sm">Some of my recent work</p>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-6 md:px-16 mb-28"
+      >
+        <div
+          class="cartes"
+          class="border border-gray-600 mb-7 w-full rounded-2xl"
+        >
+          <img class="w-full h-72 py-3" src="../assets/jeuVie.png" alt="" />
+          <div class="px-10">
+            <h3 class="py-2.5">Game of life of J. H. Conway</h3>
+            <p class="text-sm text-gray-500">
+              The Game of Life is a cellular automaton that runs without player
+              interaction. It takes place on a grid of living and dead cells,
+              whose evolution depends on their neighbors. At each iteration,
+              cells are born, survive, or die according to simple rules.
+            </p>
+            <div class="flex justify-start py-3.5 gap-7">
+              <p class="text-green-500 font-bold">Java</p>
+              <p class="font-bold">JavaFX</p>
+            </div>
+            <div class="flex justify-between py-4">
+              <button class="text-green-500 hover:text-white">Live Demo</button>
+              <button class="text-green-500 hover:text-white">
+                <a href=""
+                  >GitHub<span
+                    id="versGit"
+                    class="fa-brands fa-github pl-2"
+                  ></span
+                ></a>
+              </button>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #ced9d4;
+                }
+              </style>
+            </div>
           </div>
-          <div class="flex justify-between py-4">
-            <button class="text-green-500 hover:text-white">Live Demo</button>
-            <button class="text-green-500 hover:text-white">
-              <a href=""
-                >GitHub<span
-                  id="versGit"
-                  class="fa-brands fa-github pl-2"
-                ></span
-              ></a>
-            </button>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #ced9d4;
-              }
-            </style>
+        </div>
+        <div
+          class="cartes"
+          class="border border-gray-600 mb-7 w-full rounded-2xl"
+        >
+          <img class="w-full h-72 py-3" src="../assets/nextep.png" alt="" />
+          <div class="px-10">
+            <h3 class="py-2.5">Career Guidance Website</h3>
+            <p class="text-sm text-gray-500">
+              A web platform that helps users discover careers suited to their
+              skills through an interactive assessment.
+            </p>
+            <div class="flex justify-start py-3.5 gap-7">
+              <p class="text-green-500 font-bold">PHP</p>
+              <p class="font-bold">HTML</p>
+              <p>CSS/Bootstrap</p>
+              <p>JavaScript</p>
+            </div>
+            <div class="flex justify-between py-4">
+              <button class="text-green-500 hover:text-white">Live Demo</button>
+              <button class="text-green-500 hover:text-white">
+                <a href=""
+                  >GitHub<span
+                    id="versGit"
+                    class="fa-brands fa-github pl-2"
+                  ></span
+                ></a>
+              </button>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #ced9d4;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cartes"
+          class="border border-gray-600 mb-7 w-full rounded-2xl"
+        >
+          <img class="w-full h-72 py-3" src="../assets/lsystem.png" alt="" />
+          <div class="px-10">
+            <h3 class="py-2.5">L-System Interpreter</h3>
+            <p class="text-sm text-gray-500">
+              L-system interpreter for generating 2D and 3D plant structures
+              based on rewriting rules, illustrating natural growth patterns.
+            </p>
+            <div class="flex justify-start py-3.5 gap-7">
+              <p class="text-green-500 font-bold">Java</p>
+              <p class="font-bold">JavaFX</p>
+            </div>
+            <div class="flex justify-between py-4">
+              <button class="text-green-500 hover:text-white">Live Demo</button>
+              <button class="text-green-500 hover:text-white">
+                <a href=""
+                  >GitHub<span
+                    id="versGit"
+                    class="fa-brands fa-github pl-2"
+                  ></span
+                ></a>
+              </button>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #ced9d4;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cartes"
+          class="border border-gray-600 mb-7 w-full rounded-2xl"
+        >
+          <img class="w-full h-72 py-3" src="../assets/DM.png" alt="" />
+          <div class="px-10">
+            <h3 class="py-2.5">Personal Task Manager</h3>
+            <p class="text-sm text-gray-500">
+              A task management application designed to organize my personal
+              schedule, featuring full CRUD operations for creating, updating,
+              and tracking tasks.
+            </p>
+            <div class="flex justify-start py-3.5 gap-7">
+              <p class="text-green-500 font-bold">PHP</p>
+              <p class="font-bold">HTML</p>
+              <p>CSS</p>
+            </div>
+            <div class="flex justify-between py-4">
+              <button class="text-green-500 hover:text-white">Live Demo</button>
+              <button class="text-green-500 hover:text-white">
+                <a href=""
+                  >GitHub<span
+                    id="versGit"
+                    class="fa-brands fa-github pl-2"
+                  ></span
+                ></a>
+              </button>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #ced9d4;
+                }
+              </style>
+            </div>
           </div>
         </div>
       </div>
-      <div class="border border-gray-600 mb-7  w-full rounded-2xl">
-        <img class="w-full h-72 py-3" src="../assets/nextep.png" alt="" />
-        <div class="px-10">
-          <h3 class="py-2.5">Career Guidance Website</h3>
-          <p class="text-sm text-gray-500">
-            A web platform that helps users discover careers suited to their
-            skills through an interactive assessment.
-          </p>
-          <div class="flex justify-start py-3.5 gap-7">
-            <p class="text-green-500 font-bold">PHP</p>
-            <p class="font-bold">HTML</p>
-            <p>CSS/Bootstrap</p>
-            <p>JavaScript</p>
-          </div>
-          <div class="flex justify-between py-4">
-            <button class="text-green-500 hover:text-white">Live Demo</button>
-            <button class="text-green-500 hover:text-white">
-              <a href=""
-                >GitHub<span
-                  id="versGit"
-                  class="fa-brands fa-github pl-2"
-                ></span
-              ></a>
-            </button>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #ced9d4;
-              }
-            </style>
-          </div>
-        </div>
-      </div>
-      <div class="border border-gray-600 mb-7  w-full rounded-2xl">
-        <img class="w-full h-72 py-3" src="../assets/lsystem.png" alt="" />
-        <div class="px-10">
-          <h3 class="py-2.5">L-System Interpreter</h3>
-          <p class="text-sm text-gray-500">
-            L-system interpreter for generating 2D and 3D plant structures based
-            on rewriting rules, illustrating natural growth patterns.
-          </p>
-          <div class="flex justify-start py-3.5 gap-7">
-            <p class="text-green-500 font-bold">Java</p>
-            <p class="font-bold">JavaFX</p>
-          </div>
-          <div class="flex justify-between py-4">
-            <button class="text-green-500 hover:text-white">Live Demo</button>
-            <button class="text-green-500 hover:text-white">
-              <a href=""
-                >GitHub<span
-                  id="versGit"
-                  class="fa-brands fa-github pl-2"
-                ></span
-              ></a>
-            </button>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #ced9d4;
-              }
-            </style>
-          </div>
-        </div>
-      </div>
-      <div class="border border-gray-600 mb-7 w-full rounded-2xl">
-        <img class="w-full h-72 py-3" src="../assets/DM.png" alt="" />
-        <div class="px-10">
-          <h3 class="py-2.5">Personal Task Manager</h3>
-          <p class="text-sm text-gray-500">
-            A task management application designed to organize my personal
-            schedule, featuring full CRUD operations for creating, updating, and
-            tracking tasks.
-          </p>
-          <div class="flex justify-start py-3.5 gap-7">
-            <p class="text-green-500 font-bold">PHP</p>
-            <p class="font-bold">HTML</p>
-            <p>CSS</p>
-          </div>
-          <div class="flex justify-between py-4">
-            <button class="text-green-500 hover:text-white">Live Demo</button>
-            <button class="text-green-500 hover:text-white">
-              <a href=""
-                >GitHub<span
-                  id="versGit"
-                  class="fa-brands fa-github pl-2"
-                ></span
-              ></a>
-            </button>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #ced9d4;
-              }
-            </style>
-          </div>
-        </div>
-      </div>
-    </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <div id="cont_principal" class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-14 px-6 md:px-16">
-      <div id="col_msg" class="pt-10 lg:pt-36 mb-12">
-        <div>
-          <h4 class="text-green-500 mb-3">Contact</h4>
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            Get in <span class="text-green-400">Touch.</span>
-          </h1>
-          <p class="text-gray-400 mb-8">
-            I'm open to internships opportunities <br/>
-            and interesting projects
-          </p>
-        </div>
+      <div
+        id="cont_principal"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-14 px-6 md:px-16"
+      >
+        <div id="col_msg" class="pt-10 lg:pt-36 mb-12">
+          <div>
+            <h4
+              style="font-family: &quot;Syne&quot;, sans-serif"
+              class="font-extrabold text-green-500 uppercase tracking-widest mb-3"
+            >
+              Contact
+            </h4>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Get in <span class="text-green-400">Touch.</span>
+            </h1>
+            <p class="text-gray-400 mb-8">
+              I'm open to internships opportunities <br />
+              and interesting projects
+            </p>
+          </div>
 
-        <div class="grid grid-cols-1 gap-7">
-          <div
-            class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-          >
-            <div class="grid grid-cols-2">
-              <div class="border border-green-800 bg-green-900 mt-3 w-12">
-                <span
-                  id="versGit"
-                  class="fa-brands fa-rocketchat px-3 py-3"
-                ></span>
+          <div class="grid grid-cols-1 gap-7">
+            <div
+              class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            >
+              <div class="grid grid-cols-2">
+                <div class="border border-green-800 bg-green-900 mt-3 w-12">
+                  <span
+                    id="versGit"
+                    class="fa-brands fa-rocketchat px-3 py-3"
+                  ></span>
+                </div>
+                <div class="grid grid-cols-1 gap-1.5 -ml-12">
+                  <span>Email</span>
+                  <span
+                    ><a
+                      href="mailto:borisamouss02@gmail.com?subject=Contact Portfolio&body=Bonjour Monsieur AMOUSSOU Boris"
+                      class="text-gray-500 text-sm hover:text-white"
+                      >borisamouss02@gmail.com</a
+                    ></span
+                  >
+                </div>
               </div>
-              <div class="grid grid-cols-1 gap-1.5 -ml-12">
-                <span>Email</span>
-                <span
-                  ><a
-                    href="mailto:borisamouss02@gmail.com?subject=Contact Portfolio&body=Bonjour Monsieur AMOUSSOU Boris"
-                    class="text-gray-500 text-sm hover:text-white"
-                    >borisamouss02@gmail.com</a
-                  ></span
-                >
-              </div>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #d9e6de;
+                }
+              </style>
             </div>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #d9e6de;
-              }
-            </style>
+            <div
+              class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            >
+              <div class="grid grid-cols-2">
+                <div class="border border-green-800 bg-green-900 mt-3 w-12">
+                  <span
+                    id="versGit"
+                    class="fa-brands fa-github px-3 py-3"
+                  ></span>
+                </div>
+                <div class="grid grid-cols-1 gap-1.5 -ml-12">
+                  <span>Github</span>
+                  <span
+                    ><a
+                      href="https://github.com/AmoussouMensanhBoris"
+                      class="text-gray-500 text-sm wrap-break-word hover:text-white"
+                      >https://github.com/AmoussouMensanhBoris</a
+                    ></span
+                  >
+                </div>
+              </div>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #d9e6de;
+                }
+              </style>
+            </div>
+            <div
+              class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            >
+              <div class="grid grid-cols-2">
+                <div class="border border-green-800 bg-green-900 mt-3 w-12">
+                  <span
+                    id="versGit"
+                    class="fa-brands fa-linkedin px-3 py-3"
+                  ></span>
+                </div>
+                <div class="grid grid-cols-1 gap-1.5 -ml-12">
+                  <span>Linkedin</span>
+                  <span
+                    ><a
+                      href="https://www.linkedin.com/in/amoussou-mensanh-boris-966256271"
+                      class="text-gray-500 text-sm hover:text-white"
+                      >linkedin.com/in/amoussou-mensanh-boris-966256271</a
+                    ></span
+                  >
+                </div>
+              </div>
+              <style>
+                #versGit {
+                  font-size: 20px;
+                  color: #d9e6de;
+                }
+              </style>
+            </div>
           </div>
+        </div>
+        <div id="section2" class="w-full">
           <div
-            class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            class="border border-green-900 w-full mt-10 lg:mt-64 px-4 md:px-10 py-8 bg-black rounded-2xl shadow-lg shadow-green-700"
           >
-            <div class="grid grid-cols-2">
-              <div class="border border-green-800 bg-green-900 mt-3 w-12">
-                <span id="versGit" class="fa-brands fa-github px-3 py-3"></span>
+            <form action="">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col gap-2">
+                  <label for="nom">Name</label>
+                  <input
+                    type="text"
+                    id="nom"
+                    class="border border-green-900 rounded-xl h-14 w-full px-4 bg-transparent outline-none focus:border-green-500"
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="border border-green-900 rounded-xl h-14 w-full px-4 bg-transparent outline-none focus:border-green-500"
+                  />
+                </div>
               </div>
-              <div class="grid grid-cols-1 gap-1.5 -ml-12">
-                <span>Github</span>
-                <span
-                  ><a
-                    href="https://github.com/AmoussouMensanhBoris"
-                    class="text-gray-500 text-sm wrap-break-word hover:text-white"
-                    >https://github.com/AmoussouMensanhBoris</a
-                  ></span
-                >
+              <div class="flex flex-col gap-2 mt-6">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  class="border border-green-900 h-40 rounded-xl w-full p-4 bg-transparent resize-none outline-none focus:border-green-500"
+                ></textarea>
               </div>
-            </div>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #d9e6de;
-              }
-            </style>
-          </div>
-          <div
-            class="border border-gray-700 py-4 px-4 bg-gray-800 rounded-xl w-72 transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-          >
-            <div class="grid grid-cols-2">
-              <div class="border border-green-800 bg-green-900 mt-3 w-12">
-                <span
-                  id="versGit"
-                  class="fa-brands fa-linkedin px-3 py-3"
-                ></span>
-              </div>
-              <div class="grid grid-cols-1 gap-1.5 -ml-12">
-                <span>Linkedin</span>
-                <span
-                  ><a
-                    href="https://www.linkedin.com/in/amoussou-mensanh-boris-966256271"
-                    class="text-gray-500 text-sm hover:text-white"
-                    >linkedin.com/in/amoussou-mensanh-boris-966256271</a
-                  ></span
-                >
-              </div>
-            </div>
-            <style>
-              #versGit {
-                font-size: 20px;
-                color: #d9e6de;
-              }
-            </style>
+              <button
+                type="submit"
+                class="bg-green-500 rounded-2xl mt-6 px-6 py-2 text-black font-semibold hover:bg-green-400 transition"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
-     <div id="section2" class="w-full"> <div class="border border-green-900 w-full mt-10 lg:mt-64 px-4 md:px-10 py-8 bg-black rounded-2xl shadow-lg shadow-green-700" > <form action=""> <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <div class="flex flex-col gap-2"> <label for="nom">Name</label> <input type="text" id="nom" class="border border-green-900 rounded-xl h-14 w-full px-4 bg-transparent outline-none focus:border-green-500" /> </div> <div class="flex flex-col gap-2"> <label for="email">Email</label> <input type="email" id="email" class="border border-green-900 rounded-xl h-14 w-full px-4 bg-transparent outline-none focus:border-green-500" /> </div> </div> <div class="flex flex-col gap-2 mt-6"> <label for="message">Message</label> <textarea id="message" class="border border-green-900 h-40 rounded-xl w-full p-4 bg-transparent resize-none outline-none focus:border-green-500" ></textarea> </div> <button type="submit" class="bg-green-500 rounded-2xl mt-6 px-6 py-2 text-black font-semibold hover:bg-green-400 transition" > Send Message </button> </form> </div> </div>
-    </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="mt-8 mb-40 h-0.5 w-full bg-green-500"></div>
-    <div id="apres line" class="flex flex-col lg:flex-row justify-between gap-10 px-6 md:px-16 mb-12">
+      <div class="mt-8 mb-40 h-0.5 w-full bg-green-500"></div>
       <div
-        id="1"
-        class="w-xs rounded-2xl overflow-hidden bg-black p-5 grid grid-cols-1 gap-2.5"
+        id="apres line"
+        class="flex flex-col lg:flex-row justify-between gap-10 px-6 md:px-16 mb-12"
       >
-        <div class="ml-2 inline-flex items-baseline gap-1.5">
-          <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
-          <span class="text-2xl font-bold">
-            <span>Boris</span>
-            <span class="text-green-400">Portfolio</span>
-          </span>
+        <div
+          id="1"
+          class="w-xs rounded-2xl overflow-hidden bg-black p-5 grid grid-cols-1 gap-2.5"
+        >
+          <div class="ml-2 inline-flex items-baseline gap-1.5">
+            <span class="text-green-400 font-bold text-xl">&lt;/&gt;</span>
+            <span class="text-2xl font-bold">
+              <span>Boris</span>
+              <span class="text-green-400">Portfolio</span>
+            </span>
+          </div>
+          <p class="text-gray-400">
+            Bulding web applications and exploring new technologies; Open to
+            opportunities
+          </p>
         </div>
-        <p class="text-gray-400">
-          Bulding web applications and exploring new technologies; Open to
-          opportunities
-        </p>
-      </div>
-      <div
-        id="2"
-        class="w-xs rounded-2xl overflow-hidden bg-black p-5 grid grid-cols-1 gap-2.5"
-      >
-        <h4 class="text-green-500">Quick Links</h4>
-        <div class="grid grid-cols-1 gap-2.5">
-          <nav class="grid grid-cols-1 gap-2.5 text-white">
-            <a href="#home" class="relative group"> Home </a>
-            <a href="#skills" class="relative group"> Skills </a>
-            <a href="#projects" class="relative group"> Projects </a>
-            <a href="#contact" class="relative group"> Contact </a>
-          </nav>
+        <div
+          id="2"
+          class="w-xs rounded-2xl overflow-hidden bg-black p-5 grid grid-cols-1 gap-2.5"
+        >
+          <h4 class="text-green-500">Quick Links</h4>
+          <div class="grid grid-cols-1 gap-2.5">
+            <nav class="grid grid-cols-1 gap-2.5 text-white">
+              <a href="#home" class="relative group"> Home </a>
+              <a href="#skills" class="relative group"> Skills </a>
+              <a href="#projects" class="relative group"> Projects </a>
+              <a href="#contact" class="relative group"> Contact </a>
+            </nav>
+          </div>
         </div>
-      </div>
-      <div id="3" class="grid grid-cols-1 gap-2.5">
-        <h4 class="text-green-500">Connect</h4>
-        <div>
-          <a href=""><span id="reseaux" class="fa-brands fa-github"></span></a>
-          <a href="">
-            <span id="reseaux" class="fa-brands fa-linkedin"></span
-          ></a>
-          <style>
-            #reseaux {
-              font-size: 30px;
-              color: #00ff88;
-              margin: 10px;
-              transition: 0.3s;
-            }
+        <div id="3" class="grid grid-cols-1 gap-2.5">
+          <h4 class="text-green-500">Connect</h4>
+          <div>
+            <a href="https://github.com/AmoussouMensanhBoris"
+              ><span id="reseaux" class="fa-brands fa-github"></span
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/amoussou-mensanh-boris-966256271"
+            >
+              <span id="reseaux" class="fa-brands fa-linkedin"></span
+            ></a>
+            <style>
+              #reseaux {
+                font-size: 30px;
+                color: #00ff88;
+                margin: 10px;
+                transition: 0.3s;
+              }
 
-            #reseaux:hover {
-              transform: scale(1.2);
-            }
-          </style>
+              #reseaux:hover {
+                transform: scale(1.2);
+              }
+            </style>
+          </div>
         </div>
       </div>
-    </div>
-    <p class="text-gray-400 mt-10 text-center">
-      @2026 Amoussou Mensanh Boris. All rights reserved
-    </p>
+      <p class="text-gray-400 mt-10 text-center">
+        @2026 Amoussou Mensanh Boris. All rights reserved
+      </p>
     </footer>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+      });
+
+      const navLinks = document.querySelectorAll("#mobile-menu a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      let mission = "I build modern web applications.";
+      let text =
+        " I'm a computer science student passionate about clean code, distributed \n systems, and artificial intelligence.";
+      let i = 0;
+      function ecriture(id, phrase, fin, i = 0) {
+        if (i < phrase.length) {
+          document.getElementById(id).textContent += phrase[i];
+
+          setTimeout(() => {
+            ecriture(id, phrase, fin, i + 1);
+          }, 40);
+        } else {
+          if (fin) {
+            fin();
+          }
+        }
+      }
+      ecriture("mission", mission, () => {
+        ecriture("statutPro", text);
+      });
+
+      const cartes = document.querySelectorAll(".cartes");
+      cartes.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateY = (x - centerX) / 40;
+          const rotateX = (centerY - y) / 40;
+
+          card.style.transform = `
+          perspective(1000px)
+          scale(1.03)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+        `;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = `
+          perspective(1000px)
+          scale(1)
+          rotateX(0deg)
+          rotateY(0deg)
+        `;
+        });
+      });
+
+      //scrollpsy
+
+      let sections = document.querySelectorAll("section");
+      let links = document.querySelectorAll(".link");
+      window.addEventListener("scroll", () => {
+        let courant = "";
+        sections.forEach((section) => {
+          let position = section.offsetTop;
+          let taille = section.offsetHeight;
+          if (!section.id) {
+            return;
+          }
+          if (
+            window.scrollY >= position - 150 &&
+            window.scrollY < position + taille - 150
+          ) {
+            courant = section.id;
+            console.log(courant);
+          }
+        });
+
+        links.forEach((link) => {
+          link.classList.remove("text-green-400", "font-bold");
+
+          if (link.getAttribute("href") === `#${courant}`) {
+            link.classList.add("text-green-400", "font-bold");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
