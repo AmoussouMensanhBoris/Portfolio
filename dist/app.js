@@ -14,8 +14,8 @@ const menuBtn = document.getElementById("menu-btn");
         });
       });
 
-      let mission = "I build modern web applications.";
-      let text =
+      const mission = "I build modern web applications.";
+      const text =
         " I'm a computer science student passionate about clean code, distributed \n systems, and artificial intelligence.";
       let i = 0;
       function ecriture(id, phrase, fin, i = 0) {
