@@ -10,10 +10,22 @@ const navLinks = document.querySelectorAll("#mobile-menu a");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
+    mobileMenu.classList.remove("flex");
     mobileMenu.classList.add("hidden");
   });
 });
 
+document.addEventListener("click", (e) => {
+  if (
+    !mobileMenu.contains(e.target) &&
+    !menuBtn.contains(e.target)
+  ) {
+    mobileMenu.classList.remove("flex");
+    mobileMenu.classList.add("hidden");
+  }
+});
+
+//description dynamique
 const mission = "I build modern web applications.";
 const text =
   " I'm a computer science student passionate about clean code, distributed \n systems, and artificial intelligence.";
@@ -35,6 +47,7 @@ ecriture("mission", mission, () => {
   ecriture("statutPro", text);
 });
 
+// cartes en 3D
 const cartes = document.querySelectorAll(".cartes");
 cartes.forEach((card) => {
   card.addEventListener("mousemove", (e) => {
