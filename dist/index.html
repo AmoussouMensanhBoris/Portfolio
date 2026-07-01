@@ -766,13 +766,16 @@
           <div
             class="border border-green-900 w-full mt-10 lg:mt-64 px-4 md:px-10 py-8 bg-black rounded-2xl shadow-lg shadow-green-700"
           >
-            <form action="">
+            <form id="contact_form">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="flex flex-col gap-2">
                   <label for="nom">Name</label>
                   <input
                     type="text"
                     id="nom"
+                    name="nom"
+                    placeholder="your name"
+                    required
                     class="border border-green-900 rounded-xl h-14 w-full px-4 bg-transparent outline-none focus:border-green-500"
                   />
                 </div>
@@ -781,6 +784,9 @@
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    placeholder="your email"
+                    required
                     class="border border-green-900 rounded-xl h-14 w-full px-4 bg-transparent outline-none focus:border-green-500"
                   />
                 </div>
@@ -789,15 +795,20 @@
                 <label for="message">Message</label>
                 <textarea
                   id="message"
+                  name="message"
+                  placeholder="your message"
+                  required
                   class="border border-green-900 h-40 rounded-xl w-full p-4 bg-transparent resize-none outline-none focus:border-green-500"
                 ></textarea>
               </div>
               <button
+                id="sendBtn"
                 type="submit"
                 class="bg-green-500 rounded-2xl mt-6 px-6 py-2 text-black font-semibold hover:bg-green-400 transition"
               >
                 Send Message
               </button>
+              <p id="feedBack"></p>
             </form>
           </div>
         </div>
@@ -876,6 +887,7 @@
         © 2026 Amoussou Mensanh Boris. All rights reserved
       </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
