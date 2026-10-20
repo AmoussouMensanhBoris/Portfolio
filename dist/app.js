@@ -28,7 +28,7 @@ document.addEventListener("click", (e) => {
 //description dynamique
 const mission = "I build modern web applications.";
 const text =
-  " I'm a computer science student passionate about clean code, distributed \n systems, and artificial intelligence.";
+  " I'm a third-year computer science student at the University of Caen Normandy, passionate about clean code, software design, distributed systems, and artificial intelligence.";
 let i = 0;
 function ecriture(id, phrase, fin, i = 0) {
   if (i < phrase.length) {
@@ -97,7 +97,6 @@ window.addEventListener("scroll", () => {
       window.scrollY < position + taille - 150
     ) {
       courant = section.id;
-      console.log(courant);
     }
   });
 
@@ -121,7 +120,7 @@ emailjs.init({
 });
 //ecoute d'envoi
 if (contactForm) {
-    contactForm.addEventListener("submit", envoyerEmail);
+  contactForm.addEventListener("submit", envoyerEmail);
 }
 
 //fonction principale
@@ -148,23 +147,23 @@ function envoyerEmail(e) {
 
     // Succès
     .then(() => {
-    feedback.classList.remove("text-red-500");
-    feedback.classList.add("text-green-400");
+      feedback.classList.remove("text-red-500");
+      feedback.classList.add("text-green-400");
 
-    feedback.textContent = "✅ Message sent successfully.";
+      feedback.textContent = "✅ Message sent successfully.";
 
-    contactForm.reset();
-})
+      contactForm.reset();
+    })
 
     // Erreur
     .catch((error) => {
-    feedback.classList.remove("text-green-400");
-    feedback.classList.add("text-red-500");
+      feedback.classList.remove("text-green-400");
+      feedback.classList.add("text-red-500");
 
-    feedback.textContent = "❌ Error while sending.";
+      feedback.textContent = "❌ Error while sending.";
 
-    console.error(error);
-})
+      console.error(error);
+    })
 
     // Dans tous les cas
     .finally(() => {
